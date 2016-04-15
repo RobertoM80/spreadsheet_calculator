@@ -56,7 +56,7 @@ $("form").submit(function (e) {
     // alert("call some function here");
 });
 
-$('.childsNumber').html(questions.childsNumber);
+
 
 
 

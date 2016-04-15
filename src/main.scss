@@ -1,11 +1,13 @@
 @import 'normalize';
 @import 'reveal';
 
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:200);
+
 $color_body: #E6EAEB;
 $color_link: #2C3E50;
 $color_link_hover: #D1C5D7;
-$p_color: #272F32;
-$nav_background: #B5DCE6; /*#DAEAEF*/
+$p_color: #777;
+$nav_background: #F0F0F0; /*#DAEAEF*/
 $color_active: #E80E4F;
 
 %box_shadow_general {
@@ -26,24 +28,67 @@ $color_active: #E80E4F;
     transition-duration: 1s;
 }
 
+
 /*-----mainSCSS-----*/
 
 body {
 	background-color: $color_body;
-
+	.pull-right {
+		@media (max-width: 900px){
+			display: none;
+		}	
+		@media (max-width: 768px){
+			display: none;
+		}	
+		display: inline-block;
+		margin-right: 30px;
+		margin-left: 30px;
+		margin-top: -37px;
+		color: $p_color;
+		font-family: 'Work Sans', sans-serif;
+		font-size: 0.9em;
+		span {
+			margin-right: 14px;
+			color: $color_active;
+		}
+		&.email {
+			margin-right: 200px;
+		}
+	}
 	.container-fluid {
-		
+		.container {
+
+			margin: 22px;
+			.navbar-brand img {
+				margin-top: -23px;
+				margin-left: -10px;
+				width: 103px;
+				height: 78px;
+			}		
+			
+		}
 		.navbar-inverse {
 			background-color: $nav_background;
 			height: 100px;
 			color: $p_color;
+			border: none;
 			.navbar-nav {
+				@media (min-width: 800px){
+					margin-right: -50px;
+				}
 				li {
 					a {
 						color: $p_color;
-						font-family: 'Khand', sans-serif;
-						font-size: 1.2em;
-					}
+						font-family: 'Work Sans', sans-serif;
+						font-size: 0.9em;
+						margin-right: 15px;
+						margin-left: 20px;
+						margin-bottom: -10px;
+						@media (max-width: 900px){
+							font-size: 0.8em;
+							margin-left: 0px;
+						}
+									}
 					a:hover {
 						color: $color_link_hover !important;
 					}
