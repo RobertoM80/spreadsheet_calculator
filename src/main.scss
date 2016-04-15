@@ -1,0 +1,88 @@
+@import 'normalize';
+@import 'reveal';
+
+$color_body: #E6EAEB;
+$color_link: #2C3E50;
+$color_link_hover: #D1C5D7;
+$p_color: #272F32;
+$nav_background: #B5DCE6; /*#DAEAEF*/
+$color_active: #E80E4F;
+
+%box_shadow_general {
+	-webkit-box-shadow: -1px 0px 46px -14px rgba(38,0,250,1);
+	-moz-box-shadow: -1px 0px 46px -14px rgba(38,0,250,1);
+	box-shadow: -1px 0px 46px -14px rgba(38,0,250,1);
+}
+
+%text-shadow {
+	text-shadow: 0px 3px 4px rgba(150, 150, 150, 1);
+}
+
+@mixin rotate360 {
+	-ms-transform: rotate(360deg); /* IE 9 */
+    -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+    transform: rotate(360deg);
+    -webkit-transition-duration: 1s; /* Safari */
+    transition-duration: 1s;
+}
+
+/*-----mainSCSS-----*/
+
+body {
+	background-color: $color_body;
+
+	.container-fluid {
+		
+		.navbar-inverse {
+			background-color: $nav_background;
+			height: 100px;
+			color: $p_color;
+			.navbar-nav {
+				li {
+					a {
+						color: $p_color;
+						font-family: 'Khand', sans-serif;
+						font-size: 1.2em;
+					}
+					a:hover {
+						color: $color_link_hover !important;
+					}
+					span.active {
+						color: $color_active;
+					}
+				}
+			}
+			.navbar-collapse {
+				@media (max-width: 768px){
+					margin-top: 19%;
+					border: none;
+					background-color: rgba(218,234,239,0.9);
+					height: 500px;
+				}
+			}
+		}
+	}
+	.reveal {
+
+		margin-top: 50px;
+		h1,h2,h3 {
+			@extend %text-shadow;
+		}
+		.input-group .form-control {
+			border-radius: 15px;
+			@extend %box_shadow_general; 
+		}
+		.btn-primary {
+			border-radius: 15px;
+			@extend %box_shadow_general; 
+		}
+		@media (max-width: 768px){
+			input.form-control {
+				max-width: 200px;		
+			    margin-left: 67%;
+			    margin-bottom: 10px;
+		    }
+		}	
+	}
+}
+	

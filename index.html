@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Roberto's Portfolio sass</title>
+  <meta name="description" content="PORTFOLIO">
+  <meta name="Roberto Mirabella" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Khand' rel='stylesheet' type='text/css'>
+  <!-- <link rel="stylesheet" href="css/theme/moon.css" id="theme"> -->
+  <link rel="stylesheet" type="text/css" href="http://ionden.com/a/plugins/ion.rangeSlider/static/css/ion.rangeSlider.skinModern.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <link rel="stylesheet" href="css/theme/sky.css" id="theme">
+  <link rel="stylesheet" type="text/css" href="http://ionden.com/a/plugins/ion.rangeSlider/static/css/ion.rangeSlider.css">
+  
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class='container-fluid'>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <ul><li><a class="navbar-brand" href="#">
+          <img id='logo' class="myLogo" src="images/logo-lemonade.png" alt="logo">
+        </a></li></ul>
+        <div class="collapse navbar-collapse">
+       
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="hm" href="#">HOME</a></li>
+            <li><a class="ab" href="#">OUR PRODUCTS</a></li>
+            <li><a class="port" href="#">PLAN FOR FUTURE</a></li>
+            <li><a class="ct" href="#">CONTACT US</a></li>
+            <li><a class="ct" href="#"><span class='active'>PROTECTION CALCULATOR</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Protection Shortfall Calculator</h1>
+          <p>
+            <small>Press the arrow key on the right to start</small>
+          </p>
+        </section>
+
+        <section>
+          <h3>Do you have children?</h3>
+          <button id='submit' type="button" class="yes btn btn-primary">YES</button>
+          <button id='submit' type="button" class="no btn btn-primary">NO</button>
+        </section>
+        <section>
+          <h3>What is the age of your youngest child?</h3>
+          <form id='num' class="form-inline center-block">
+            <div class="form-group">
+              <label class="sr-only" for="exampleInputAmount">Number of childs</label>
+              <div class="input-group">
+                <input type="text" class="form-control " id="childsNumber" placeholder="Number of childs">
+              </div>
+            </div>
+            <button id='submit' type="submit" class="childsNumber btn btn-primary">Submit</button>
+          </form>
+        </section>
+        <section>
+          <h3>To what age do you think your children will be financially dependent on you?</h3>
+          <form class="form-inline">
+            <div class="form-group">
+              <label class="sr-only" for="exampleInputAmount">Age of children</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="ageOfChildren" placeholder="Age of children">
+              </div>
+            </div>
+            <button id='submit' type="submit" class="ageOfChildren btn btn-primary">Submit</button>
+          </form>
+        </section>
+        <section>
+          <h3>How much do you owe on your mortgage?</h3>
+          <form class="form-inline">
+            <div class="form-group">
+              <label class="sr-only" for="exampleInputAmount">Amount owed</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="amountOwed" placeholder="Amount owed">
+              </div>
+            </div>
+            <button id='submit' type="submit" class="amountOwed btn btn-primary">Submit</button>
+          </form>
+        </section>
+        <section>
+          <h3>Any credit or other outstounding debt? If so how much</h3>
+          <form class="form-inline">
+            <div class="form-group">
+              <label class="sr-only" for="exampleInputAmount">Amount of credit or debt</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="amountCredit" placeholder="Amount of credit or debt">
+              </div>
+            </div>
+            <button id='submit' type="submit" class="amountCredit btn btn-primary">Submit</button>
+          </form>
+        </section>
+        <section>
+          <h3>What is your monthly net pay?</h3>
+          <form class="form-inline">
+            <div class="form-group">
+              <label class="sr-only" for="exampleInputAmount">Amount of pay</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="amountPay" placeholder="Amount of pay">
+              </div>
+            </div>
+            <button id='submit' type="submit" class="amountPay btn btn-primary">Submit</button>
+          </form>
+        </section>
+        <section>
+          <h3>What is your Partner's monthly net pay?</h3>
+          <form class="form-inline">
+            <div class="form-group">
+              <label class="sr-only" for="exampleInputAmount">Amount of pay</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="partnerPay" placeholder="Amount of pay">
+              </div>
+            </div>
+            <button id='submit' type="submit" class="partnerPay btn btn-primary">Submit</button>
+          </form>
+        </section>   
+        <section>
+          <h2>Existing Provision</h2>
+          <h3>Do you have any life cover through work? If so detail the amount</h3>
+          <form class="form-inline">
+            <div class="form-group">
+              <label class="sr-only" for="exampleInputAmount">Amount of life cover</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="lifeCover" placeholder="Amount of life cover">
+              </div>
+            </div>
+          <button id='submit' type="submit" class="lifeCover btn btn-primary">Submit</button>
+          </form>
+        </section>
+        <section>
+          <h3>Do you have any existing life cover policies? If so detail the amount</h3>
+          <form class="form-inline">
+            <div class="form-group">
+              <label class="sr-only" for="exampleInputAmount">Amount of life cover</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="lifeCover2" placeholder="Amount of life cover">
+              </div>
+            </div>
+          <button id='submit' type="submit" class="lifeCover2 btn btn-primary">Submit</button>
+          </form>
+        </section>
+         <section>
+          <h3>Savings and investments</h3>
+          <form class="form-inline">
+            <div class="form-group">
+              <label class="sr-only" for="exampleInputAmount">Savings and investments</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="savings" placeholder="Savings and investments">
+              </div>
+            </div>
+          <button id='submit' type="submit" class="savings btn btn-primary">Submit</button>
+          </form>
+       
+        </section>
+        <section>
+          <h2>SUMMARY</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Question</th>
+                <th>Answer</th>     
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Do you have children?</td>
+                <td class='hasChild'>-</td>
+              </tr>
+              <tr>
+                <td>What is the age of your youngest child?</td>
+                <td class='childsNumber'>-</td>
+              </tr>
+              <tr>
+                <td>To what age do you think your children will be financially dependent on you?</td>
+                <td class='ageOfChildren'>-</td>
+              </tr>
+              <tr>
+                <td>How much do you owe on your mortgage?</td>
+                <td class='amountOwed'>-</td>
+              </tr>
+              <tr>
+                <td>Any credit or other outstounding debt? If so how much</td>
+                <td class='amountCredit'>-</td>
+              </tr>
+              <tr>
+                <td>What is your monthly net pay?</td>
+                <td class='amountPay'>-</td>
+              </tr>
+              <tr>
+                <td>What is your Partner's monthly net pay?</td>
+                <td class='partnerPay'>-</td>
+              </tr>
+              <tr>
+                <td>Do you have any life cover through work? If so detail the amount</td>
+                <td class='lifeCover'>-</td>
+              </tr>
+              <tr>
+                <td>Do you have any existing life cover policies? If so detail the amount</td>
+                <td class='lifeCover2'>-</td>
+              </tr>
+              <tr>
+                <td>Savings and investments</td>
+                <td class='savings'>-</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section>
+        <section>
+          <h1>Protection Shortfall <br/> £0</h1>
+        </section>
+          <section>
+            <h2>I would like a quote for</h2>
+            <div>
+             <input type="text" id="range" value="" name="range" />
+            </div>
+          </section>
+          <section>
+            <h1>Thank you for using our calculator</h1>
+          </section>
+        </section>
+      </div>
+
+    </div>
+
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Javascript
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+ 
+
+  <script src="javascript/reveal.js"></script>
+  <script src="http://ionden.com/a/plugins/ion.rangeSlider/static/js/ion-rangeSlider/ion.rangeSlider.js"></script>
+
+  <script type="text/javascript" src="javascript/script.min.js"></script>
+
+  
+</body>
+</html>
