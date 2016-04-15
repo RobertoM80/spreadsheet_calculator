@@ -33,7 +33,7 @@ $("#range").ionRangeSlider({
 $('button').on('click', function(e){
 	var id = e.target.className.split(' ')[0];
 	questions[id] = $('#' + id).val();
-	console.log(questions);
+	console.log(Object.keys(questions)[0]);
 	$('td.hasChild').html(questions.hasChilds);
 	$('td.childsNumber').html(questions.childsNumber);
 	$('td.ageOfChildren').html(questions.ageOfChildren);
@@ -44,6 +44,11 @@ $('button').on('click', function(e){
 	$('td.lifeCover').html(questions.lifeCover);
 	$('td.lifeCover2').html(questions.lifeCover2);
 	$('td.savings').html(questions.savings);
+	if (Object.keys(questions)[0] == 'yes') {
+		questions.hasChilds = 'Yes'
+	} else if (Object.keys(questions)[0] == 'no') {
+		questions.hasChilds = 'No'
+	}
 });
 
 $("form").submit(function (e) {
