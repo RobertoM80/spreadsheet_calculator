@@ -48,7 +48,7 @@ $('button').on('click', function(e){
 	var id = e.target.className.split(' ')[0];
 	questions[id] = parseInt($('#' + id).val());
 
-	if (isNaN(questions[id]) === true) {
+	if (questions[id] !== questions[id]) {
 		$('.' + id + 'Error').html('Please insert a numeric value');
 	} else {
 		$('.' + id + 'Error').empty();
