@@ -1,21 +1,20 @@
-var hasChilds,
-	childsNumber,
-	ageOfChildren,
-	amountOwed,
-	amountCredit,
-	amountPay,
-	partnerPay,
-	lifCover,
-	lifeCover2,
-	savings,
-	debts,
+var debts,
 	max_pay,
 	child,
 	provisions,
 	result
 
-var questions = {};
-
+var questions = {
+	ageOfChildren: 0,
+	childsNumber: 0,
+	amountOwed: 0,
+	amountCredit: 0,
+	amountPay: 0,
+	partnerPay: 0,
+	lifeCover: 0,
+	lifeCover2: 0,
+	savings: 0
+};
 
 function returnMax(val1, val2) {
 	if (parseInt(val1) > parseInt(val2)) {
@@ -45,27 +44,14 @@ $("#range").ionRangeSlider({
 
 
 $('button').on('click', function(e){
+
 	var id = e.target.className.split(' ')[0];
 	questions[id] = parseInt($('#' + id).val());
 
-	if(questions.ageOfChildren === undefined)  {
-		questions.ageOfChildren = '0';
-	} else if (questions.childsNumber === undefined) {
-		questions.childsNumber = '0'
-	} else if (questions.amountOwed === undefined) {
-		questions.amountOwed = '0'
-	} else if (questions.amountCredit === undefined) {
-		questions.amountCredit = '0'
-	} else if (questions.amountPay === undefined) {
-		questions.amountPay = '0'
-	} else if (questions.partnerPay === undefined) {
-		questions.partnerPay = '0'
-	} else if (questions.lifeCover === undefined) {
-		questions.lifeCover = '0'
-	} else if (questions.lifeCover2 === undefined) {
-		questions.lifeCover2 = '0'
-	} else if (questions.savings === undefined) {
-		questions.savings = '0'
+	if (isNaN(questions[id]) === true) {
+		$('.' + id + 'Error').html('Please insert a numeric value');
+	} else {
+		$('.' + id + 'Error').empty();
 	};
 
 	$('td.hasChild').html(questions.hasChilds);
@@ -79,16 +65,29 @@ $('button').on('click', function(e){
 	$('td.lifeCover2').html(questions.lifeCover2);
 	$('td.savings').html(questions.savings);
 
-	if (Object.keys(questions)[0] == 'yes') {
+	if (Object.keys(questions)[0] === 'yes') {
 		questions.hasChilds = 'Yes'
-	} else if (Object.keys(questions)[0] == 'no') {
+	} else if (Object.keys(questions)[0] === 'no') {
 		questions.hasChilds = 'No'
 	}
-	console.log(questions.ageOfChildren, questions.childsNumber);
+
 	debts = parseInt(questions.amountOwed + questions.amountCredit);
 	max_pay = returnMax(questions.amountPay, questions.partnerPay);
 	child = parseInt(questions.ageOfChildren - questions.childsNumber);
 	provisions = parseInt(questions.lifeCover + questions.lifeCover2 + questions.savings);	
+	if (isNaN(debts) === true) {
+		debts = 0
+	} 
+	if (isNaN(max_pay) === true) {
+		max_pay = 0
+	}
+	if (isNaN(child) === true) {
+		child = 0
+	}
+	if (isNaN(provisions) === true) {
+		provisions = 0
+	}
+
 	result = debts + max_pay * 12 * child - provisions;
 
 	$('span.sum').html(result);
